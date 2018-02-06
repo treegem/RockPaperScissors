@@ -10,6 +10,7 @@ class MainWindow(QDialog):
 
         loadUi('../gui/main_window.ui', self)
 
+
 app = QApplication(sys.argv)
 widget = MainWindow()
 widget.show()

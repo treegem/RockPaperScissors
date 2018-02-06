@@ -44,3 +44,9 @@ def test_validate_choices():
         game.human_choice = 'InvalidChoicerito'
         game.validate_choices()
     assert 'Corrupt choices' in str(e.value)
+
+
+def test_compare():
+    game.human_choice = 'Paper'
+    game.computer_choice = 'Rock'
+    assert game.compare() == 'Human'

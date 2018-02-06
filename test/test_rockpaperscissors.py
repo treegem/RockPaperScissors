@@ -13,18 +13,6 @@ def test_validate_choice():
         assert 'Corrupt choices' in str(e.value)
 
 
-def test_validate_choices():
-    for human_choice in game.valid_choices:
-        for computer_choice in game.valid_choices:
-            game.human_choice = human_choice
-            game.computer_choice = computer_choice
-            game.validate_choices()
-    with pytest.raises(NameError) as e:
-        game.human_choice = 'InvalidChoicerito'
-        game.validate_choices()
-    assert 'Corrupt choices' in str(e.value)
-
-
 def test_make_random_choice():
     computed_choices = []
     i = 0
@@ -38,3 +26,21 @@ def test_make_random_choice():
         if i == safety_break:
             break
     assert set(computed_choices) == set(game.valid_choices)
+
+
+def test_make_computer_choice():
+    game.computer_choice = None
+    game.make_computer_choice()
+    assert game.computer_choice in game.valid_choices
+
+
+def test_validate_choices():
+    for human_choice in game.valid_choices:
+        for computer_choice in game.valid_choices:
+            game.human_choice = human_choice
+            game.computer_choice = computer_choice
+            game.validate_choices()
+    with pytest.raises(NameError) as e:
+        game.human_choice = 'InvalidChoicerito'
+        game.validate_choices()
+    assert 'Corrupt choices' in str(e.value)

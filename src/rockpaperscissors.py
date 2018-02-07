@@ -11,6 +11,30 @@ class RockPaperScissors:
 
     def compare(self):
         self.validate_choices()
+        if self.human_choice == self.computer_choice:
+            return 'Draw'
+        applied_rule = self.determine_rule()
+        winner = self.apply_rule(applied_rule)
+        return winner
+
+    def apply_rule(self, applied_rule):
+        applied_rule = applied_rule.split()
+        if self.human_choice == applied_rule[0]:
+            winner = 'Human'
+        elif self.computer_choice == applied_rule[0]:
+            winner = 'Computer'
+        else:
+            raise Exception('No draw. But also no winner.')
+        return winner
+
+    def determine_rule(self):
+        applied_rule = ''
+        for rule in self.rules:
+            if self.human_choice in rule and self.computer_choice in rule:
+                applied_rule = rule
+        if applied_rule == '':
+            raise LookupError('No rule applies.')
+        return applied_rule
 
     def validate_choices(self):
         for choice in [self.human_choice, self.computer_choice]:

@@ -46,7 +46,13 @@ def test_validate_choices():
     assert 'Corrupt choices' in str(e.value)
 
 
-def test_compare():
+def test_compare_paper_rock():
     game.human_choice = 'Paper'
     game.computer_choice = 'Rock'
     assert game.compare() == 'Human'
+
+
+def test_compare_rock_paper():
+    game.human_choice = 'Rock'
+    game.computer_choice = 'Paper'
+    assert game.compare() == 'Computer'

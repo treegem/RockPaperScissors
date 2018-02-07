@@ -1,15 +1,8 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QDialog
-from PyQt5.uic import loadUi
+from PyQt5.QtWidgets import QApplication
 
-
-class MainWindow(QDialog):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-
-        loadUi('../gui/main_window.ui', self)
-
+from src.controller.main_window_controller import MainWindow
 
 app = QApplication(sys.argv)
 widget = MainWindow()

@@ -1,12 +1,19 @@
 from random import randint
 
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QGraphicsObject
 
-class RockPaperScissors:
+
+class RockPaperScissors(QGraphicsObject):
+    round_played = pyqtSignal()
+
     def __init__(self):
+        super(RockPaperScissors, self).__init__()
         self.valid_choices = ['Scissors', 'Paper', 'Rock', 'Lizard', 'Spock']
         self.rules = self.make_rules()
         self.human_choice = None
         self.computer_choice = None
+        self.winner = None
         self.make_computer_choice()
 
     def compare(self):
@@ -63,5 +70,5 @@ class RockPaperScissors:
     def play_round(self, human_choice):
         self.human_choice = human_choice
         self.make_computer_choice()
-        winner = self.compare()
-        print(winner)
+        self.winner = self.compare()
+        self.round_played.emit()

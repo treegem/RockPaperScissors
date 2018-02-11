@@ -32,7 +32,26 @@
        </size>
       </property>
       <property name="text">
-       <string>Rock</string>
+       <string notr="true"/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>rock.svg</normaloff>rock.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -45,7 +64,17 @@
        </size>
       </property>
       <property name="text">
-       <string>Paper</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>paper.svg</normaloff>paper.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -58,7 +87,17 @@
        </size>
       </property>
       <property name="text">
-       <string>Scissors</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>scissors.svg</normaloff>scissors.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -71,7 +110,17 @@
        </size>
       </property>
       <property name="text">
-       <string>Lizard</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>lizard.svg</normaloff>lizard.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -84,7 +133,17 @@
        </size>
       </property>
       <property name="text">
-       <string>Spock</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>spock.svg</normaloff>spock.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
     </item>

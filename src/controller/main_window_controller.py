@@ -25,4 +25,4 @@ class MainWindow(QDialog):
         if self.game.winner == 'Draw':
             self.ui.label_result.setText('Draw')
         else:
-            self.ui.label_result.setText('Winner: {}'.format(self.game.winner))
+            self.ui.label_result.setText('{}\nWinner: {}'.format(self.game.rule_applied, self.game.winner))

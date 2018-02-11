@@ -11,17 +11,20 @@ class RockPaperScissors(QGraphicsObject):
         super(RockPaperScissors, self).__init__()
         self.valid_choices = ['Scissors', 'Paper', 'Rock', 'Lizard', 'Spock']
         self.rules = self.make_rules()
+
+        self.rule_applied = None
         self.human_choice = None
         self.computer_choice = None
         self.winner = None
+
         self.make_computer_choice()
 
     def compare(self):
         self.validate_choices()
         if self.human_choice == self.computer_choice:
             return 'Draw'
-        applied_rule = self.determine_rule()
-        winner = self.apply_rule(applied_rule)
+        self.rule_applied = self.determine_rule()
+        winner = self.apply_rule(self.rule_applied)
         return winner
 
     def apply_rule(self, applied_rule):
